@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="checkin" max_length="40" name="x_hotel_checkin" type="collection">
+        <element label="comment" max_length="40" name="comment" type="string"/>
+        <element label="date" max_length="40" name="date" type="glide_date"/>
+        <element label="floor" max_length="40" name="floor" type="integer"/>
+        <element dynamic_ref_qual="66bcdfd30fa932003e698d8ce1050eb0" label="Guest" max_length="32" name="guest" reference="x_hotel_guest" reference_qual="javascript:'sysidIN' + guestsWithReservations()" type="reference" use_reference_qualifier="dynamic"/>
+        <element label="Room" max_length="32" name="room" reference="x_hotel_room" type="reference"/>
+        <index name="index">
+            <element name="guest"/>
+        </index>
+        <index name="index2">
+            <element name="room"/>
+        </index>
+    </element>
+</database>
